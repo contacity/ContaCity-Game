@@ -100,7 +100,7 @@ public class SteeringBasics : MonoBehaviour {
 			float toRotation = (Mathf.Atan2 (direction.y, direction.x) * Mathf.Rad2Deg);
 			float rotation = Mathf.LerpAngle(transform.rotation.eulerAngles.z, toRotation, Time.deltaTime*turnSpeed);
 			
-			transform.rotation = Quaternion.Euler(0, 0, 0);
+			transform.rotation = Quaternion.Euler(0, 0, rotation);
 		}
 	}
 

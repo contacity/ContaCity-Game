@@ -60,27 +60,27 @@ namespace GlobalVars {
 		#region TopDownShooter Scene
 
 
-//		public delegate void Event();
-//		public static event Event OnPlayerDeath, OnSceneLeave;
+		public delegate void Event();
+		public static event Event OnPlayerDeath, OnSceneLeave;
 
-	//	public static void ActivateOnPlayerDeath(){
-	//		if (OnPlayerDeath != null)
-	//			OnPlayerDeath ();
-	//		else
-	//			Debug.LogError ("OnPlayerDeath is empty!");
-	//	}
-	//	public static void CallOnSceneLeave(){
-	//		OnSceneLeave ();
-	//	}
+		public static void ActivateOnPlayerDeath(){
+			if (OnPlayerDeath != null)
+				OnPlayerDeath ();
+			else
+				Debug.LogError ("OnPlayerDeath is empty!");
+		}
+		public static void CallOnSceneLeave(){
+			OnSceneLeave ();
+		}
 
 
 
-	//	public delegate void GameObjectEvent(GameObject player);
-	//	public static event GameObjectEvent OnPlayerSpawn;
+		public delegate void GameObjectEvent(GameObject player);
+		public static event GameObjectEvent OnPlayerSpawn;
 
-	//	public static void ActivateOnPlayerSpawn(GameObject player){
-	//		OnPlayerSpawn (player);
-	//	}
+		public static void ActivateOnPlayerSpawn(GameObject player){
+			OnPlayerSpawn (player);
+		}
 	//
 
 		#endregion

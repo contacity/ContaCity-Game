@@ -205,8 +205,8 @@ GameObject:
   - component: {fileID: 67543259}
   - component: {fileID: 67543261}
   - component: {fileID: 67543258}
-  - component: {fileID: 67543257}
   - component: {fileID: 67543263}
+  - component: {fileID: 67543256}
   m_Layer: 0
   m_Name: CarFollow
   m_TagString: Untagged
@@ -214,7 +214,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &67543257
+--- !u!114 &67543256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -222,15 +222,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 67543255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd4cb75017779fd48b10565fac7baf78, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bb71d84db1b57a46a66647197f96c43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: 4
-  maxAcceleration: 11
+  maxVelocity: 3.5
+  maxAcceleration: 10
   targetRadius: 0.005
   slowRadius: 1
   timeToTarget: 0.1
-  turnSpeed: 30
+  turnSpeed: 20
   smoothing: 1
   numSamplesForSmoothing: 5
 --- !u!114 &67543258

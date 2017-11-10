@@ -40,6 +40,13 @@ public class FollowPathUnit : MonoBehaviour {
 		}
     }
 
+
+	public void Trig ()
+	{
+		this.followPathTrig=true;
+	}
+		
+
     public bool isAtEndOfPath()
     {
         return Vector3.Distance(path.endNode, transform.position) < followPath.stopRadius;

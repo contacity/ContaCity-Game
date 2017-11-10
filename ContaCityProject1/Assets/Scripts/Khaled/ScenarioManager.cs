@@ -5,6 +5,8 @@ using UnityEngine;
 public class ScenarioManager : MonoBehaviour {
 
 	public GameObject CarFollow;
+	public GameObject Fire1;
+	public GameObject Fire2;
 	private FollowPathUnit followPathUnit;
 	// Use this for initialization
 	void Start () {
@@ -17,5 +19,15 @@ public class ScenarioManager : MonoBehaviour {
 			followPathUnit.followPathTrig = true;
 			print ("a");
 		}
+		Example ();
+	}
+
+	IEnumerator Example() {
+		print(Time.time);
+		yield return new WaitForSeconds(5);
+		Fire1.SetActive (true);
+		yield return new WaitForSeconds(5);
+		Fire2.SetActive (true);
+		print(Time.time);
 	}
 }

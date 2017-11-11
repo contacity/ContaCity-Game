@@ -7,8 +7,10 @@ public class FollowPathUnit : MonoBehaviour {
 
     public bool reversePath = false;
 
-    public LinePath path;
-
+    public LinePath path1;
+	public LinePath path2;
+	[HideInInspector]
+	public LinePath pathn;
 	[HideInInspector]
 	public bool followPathTrig;
 
@@ -17,7 +19,9 @@ public class FollowPathUnit : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        path.calcDistances();
+        path1.calcDistances();
+		path2.calcDistances();
+
 		print ("start");
         steeringBasics = GetComponent<SteeringBasics>();
         followPath = GetComponent<FollowPath>();
@@ -26,17 +30,7 @@ public class FollowPathUnit : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if ( followPathTrig == true) {
-			print ("followpathUnit Done");
-			path.draw ();
-
-			if (reversePath && isAtEndOfPath ()) {
-				path.reversePath ();
-			}
-
-			Vector3 accel = followPath.getSteering (path, pathLoop);
-			print ("update");
-			steeringBasics.steer (accel);
-			steeringBasics.lookWhereYoureGoing ();
+			GoPathSelect (pathn);
 		}
     }
 
@@ -47,8 +41,23 @@ public class FollowPathUnit : MonoBehaviour {
 	}
 		
 
-    public bool isAtEndOfPath()
+	public void GoPathSelect (LinePath pathn){
+		print ("followpathUnit Done");
+		pathn.draw ();
+
+		if (reversePath && isAtEndOfPath (pathn)) {
+			pathn.reversePath ();
+		}
+
+		Vector3 accel = followPath.getSteering (pathn, pathLoop);
+		print ("update");
+		steeringBasics.steer (accel);
+		steeringBasics.lookWhereYoureGoing ();
+	}
+
+
+	public bool isAtEndOfPath(LinePath pathn)
     {
-        return Vector3.Distance(path.endNode, transform.position) < followPath.stopRadius;
+        return Vector3.Distance(pathn.endNode, transform.position) < followPath.stopRadius;
     }
 }

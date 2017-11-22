@@ -7,7 +7,6 @@ public class HealthSlider : MonoBehaviour {
 
 	public Slider slider;
 	public bool fire = false;
-	public float hvalue=10f;
 	// Use this for initialization
 	void Start () {
 		
@@ -23,8 +22,7 @@ public class HealthSlider : MonoBehaviour {
 
 	void Health(){
 		slider = GetComponent<Slider> ();
-		slider.value -= 0.4f*Time.deltaTime;
-		hvalue = slider.value;
+		slider.value -= 0.02f*Time.deltaTime;
 	}
 }
 
